@@ -6,6 +6,10 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         column-gap: 20px;
+        .right {
+            display: flex;
+            flex-direction: column;
+        }
     }
     .card {
         padding: 60px;
@@ -14,7 +18,14 @@
         position: relative;
         margin-bottom: 20px;
         &.large {
+            display: flex;
             overflow: hidden;
+            .left, .right {
+                width: 50%;
+                button {
+                    margin-top: 20px;
+                }
+            }
             .subtitle {
                 color: $primary;
                 font-size: 24px;
@@ -23,11 +34,15 @@
                 margin-bottom: 5px;
             }
             .title {
+                width: 50%;
                 font-weight: 900;
                 font-size: 48px;
                 line-height: 54px;
                 margin-bottom: 20px;
                 color: #000;
+                &.full-width {
+                    width: 100%;
+                }
             }
             .controls {
                 position: absolute;
@@ -58,6 +73,21 @@
                     font-size: 80px;
                 }
             }
+            .absolute-img {
+                border-radius: 24px;
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                right: 50px;
+                bottom: -30px;
+                box-shadow: 0px 0px 30px 0px rgba(247,193,65,0.9);
+            }
+            &.column {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
         }
         &.small {
             display: flex;
@@ -74,15 +104,6 @@
             button {
                 margin-top: 40px;
             }
-            &.dark {
-                background-color: $darkBackground;
-                .title {
-                    color: $secondary;
-                }
-                .text {
-                    color: #fff;
-                }
-            }
             .video-preview {
                 position: absolute;
                 bottom: 20px;
@@ -92,6 +113,7 @@
                 width: 50%;
                 overflow: hidden;
                 box-shadow: 0px 10px 28px 0px rgba($primary,0.6);
+                transition: .4s ease-in-out;
                 .play-wrap {
                     cursor: pointer;
                     position: absolute;
@@ -129,6 +151,10 @@
                         }
                     }
                 }
+                &:hover {
+                    transform: translate(6px, 6px);
+                    box-shadow: 0px 5px 14px 0px rgba($primary,0.6);
+                }
                 &:after {
                     content: '';
                     position: absolute;
@@ -139,6 +165,62 @@
                     background-color: rgba($primary, .7);
                 }
             }
+        }
+        &.dark {
+            background-color: $darkBackground;
+            .title {
+                color: $secondary;
+            }
+            .text {
+                color: #fff;
+            }
+        }
+        &.benefit {
+            span {
+                font-size: 48px;
+            }
+            .text {
+                margin-top: 20px;
+                font-size: 18px;
+                line-height: 24px;
+                color: #3d3d3d;
+            }
+            &:nth-child(1) {
+                span {
+                    color: #D10014;
+                }
+            }
+            &:nth-child(2) {
+                span {
+                    color: #4991E3;
+                }
+            }
+            &:nth-child(3) {
+                span {
+                    color: #95CD20;
+                }
+            }
+            &:nth-child(4) {
+                span {
+                    color: #F5A81E;
+                }
+            }
+        }
+    }
+    .info {
+        border-radius: 24px;
+        padding: 12px 24px;
+        background-color: $primary;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: #F4F5F7;
+        font-weight: 500;
+        box-shadow: 0px 10px 20px 0px rgba(208,2,27,0.3);
+        span {
+            font-size: 36px;
+            margin-right: 15px;
+            color: #fff;
         }
     }
 }

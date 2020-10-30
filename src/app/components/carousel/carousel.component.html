@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="title">
+        {{ title }}
+    </div>
+    <div class="carousel-wrap">
+        <ngx-slick-carousel class="carousel" #slickModal [config]="slideConfig" (afterChange)="afterChange($event)">
+            <div ngxSlickItem *ngFor="let slide of slides" class="item-wrap">
+                <div class="item">
+                    <img [src]="slide.imgUrl">
+                    <div class="text">
+                        {{ slide.text }}
+                    </div>
+                </div>            
+            </div>
+        </ngx-slick-carousel>
+        <button [class.primary]="currentSlide !== 0" class="round prev" (click)="slickModal.slickPrev()">
+            <span class="material-icons-outlined">
+                chevron_left
+            </span>
+        </button>
+        <button [class.primary]="currentSlide !== (slides.length - 4)" class="round next" (click)="slickModal.slickNext()">
+            <span class="material-icons-outlined">
+                chevron_right
+            </span>
+        </button>
+    </div>
+</div>
+

@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './containers/home/home.component';
 import { BookInfoComponent } from './containers/book-info/book-info.component';
 import { BookReadingComponent } from './containers/book-reading/book-reading.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { BookReadingComponent } from './containers/book-reading/book-reading.com
     FooterComponent,
     HomeComponent,
     BookInfoComponent,
-    BookReadingComponent
+    BookReadingComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

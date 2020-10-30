@@ -1,16 +1,16 @@
 <div class="wrapper">
-    <div class="card large">
+    <div class="card large column">
         <i class="subtitle">Dont just take our word for it!</i>
-        <div class="title">Read librarian reviews<br> of the R2 Digital Library</div>
+        <div class="title">Read librarian reviews of the R2 Digital Library</div>
         <button class="primary">go to the reviews section</button>
         <div class="controls">
             <button class="primary round">
-                <span class="material-icons">
+                <span class="material-icons-outlined">
                     chevron_left
                 </span>
             </button>
             <button class="primary round">
-                <span class="material-icons">
+                <span class="material-icons-outlined">
                     chevron_right
                 </span>
             </button>
@@ -43,11 +43,86 @@
                 <img src="assets/images/video-preview.png" alt="">
                 <div class="play-wrap">
                     <div class="play">
-                        <span class="material-icons">
+                        <span class="material-icons-outlined">
                             play_arrow
                         </span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <app-carousel [title]="'Recently added'"></app-carousel>
+    <div class="card large dark">
+        <div class="left">
+            <div class="title full-width">Expand Your Library Beyond eBooks...</div>
+        </div>
+        <div class="right">
+            <div class="text">
+                The R2 Digital Library is a web based database available from Rittenhouse Book Distributors. It offers fully integrated and searchable medical, nursing and allied health source book content from key health science publishers, on a web based platform. 
+            </div>
+            <button class="secondary">
+                See full list of titles
+            </button>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card benefit">
+            <span class="material-icons-outlined">
+                group_add
+            </span>
+            <div class="text">
+                Connect your users with essential health sciences content from the leading publishers - on a platform designed to enhance it
+            </div>
+        </div>
+        <div class="card benefit">
+            <span class="material-icons-outlined">
+                api
+            </span>
+            <div class="text">
+                Select resources at the title level and pay once for life of edition access
+            </div>
+        </div>
+        <div class="card benefit">
+            <span class="material-icons-outlined">
+                layers
+            </span>
+            <div class="text">
+                Explore consortia, patron driven Acquisition and turnkey collection development solutions
+            </div>
+        </div>
+        <div class="card benefit">
+            <span class="material-icons-outlined">
+                local_library
+            </span>
+            <div class="text">
+                Incorporate workflow, integration and collaboration tools designed for the contemporary library
+            </div>
+        </div>
+    </div>
+    <app-carousel [title]="'Most popular'"></app-carousel>
+    <div class="card large column">
+        <i class="subtitle">Featured publisher</i>
+        <div class="title">Health Administration Press</div>
+        <button class="primary">See full list of titles</button>
+        
+        <img class="absolute-img" src="https://www2.deloitte.com/content/dam/insights/us/articles/glob63515_covid-19-ceo/images/63515_Banner2.jpg/jcr:content/renditions/cq5dam.web.1440.660.jpeg">
+    </div>
+    <div class="cards">
+        <div class="card large dark column">
+            <div class="title full-width">Benefits of eContent and the R2 Digital Library</div>
+            <div class="text">If you’ve been thinking of including digital content into your library collection, but haven’t yet made the switch, here are answers to some very common questions about the benefits of using eContent and the R2 Digital Library as your platform.</div>
+            <button class="secondary">visit our help section</button>
+        </div>
+        <div class="right">
+            <div class="card large dark column">
+                <div class="title full-width">Does the R2 Library have the Titles I need?</div>
+                <div class="text">We have thousands of resources from the leading health sciences publishers, so chances are, the answer is yes. To be sure, use the search function at the top of the page to access a listing of active R2 titles.</div>
+            </div>
+            <div class="info">
+                <span class="material-icons">
+                    help_outline
+                </span>
+                1.800.345.6425 X601   /   info@r2library.com
             </div>
         </div>
     </div>

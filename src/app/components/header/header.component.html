@@ -33,14 +33,14 @@
                 <div class="input-wrap">
                     <input #searchInput type="text">
                 </div>
-                <span *ngIf="!searchIsOpen" class="material-icons icon" (click)="toggleSearch()">search</span>
-                <span *ngIf="searchIsOpen" class="material-icons icon" (click)="toggleSearch()">close</span>
+                <span *ngIf="!searchIsOpen" class="material-icons-outlined icon" (click)="toggleSearch()">search</span>
+                <span *ngIf="searchIsOpen" class="material-icons-outlined icon" (click)="toggleSearch()">close</span>
             </div>
             <a href="#">
-                <span class="material-icons">account_circle</span>
+                <span class="material-icons-outlined">account_circle</span>
             </a>
-            <span *ngIf="!menuIsOpen" class="material-icons menu" (click)="toggleMenu()">menu</span>
-            <span *ngIf="menuIsOpen" class="material-icons menu" (click)="toggleMenu()">close</span>
+            <span *ngIf="!menuIsOpen" class="material-icons-outlined menu" (click)="toggleMenu()">menu</span>
+            <span *ngIf="menuIsOpen" class="material-icons-outlined menu" (click)="toggleMenu()">close</span>
         </div>
         <div *ngIf="menuIsOpen" class="menu-mobile">
             <a href="#">Browse</a>

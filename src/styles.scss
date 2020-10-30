@@ -14,7 +14,7 @@ body {
 }
 
 button {
-    cursor: pointer;
+    background-color: rgba(#4a4a4a, .2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,30 +22,33 @@ button {
     padding: 12px 20px;
     position: relative;
     border: none;
+    outline: none;
     transition: .4s;
     border-radius: 8px;
     text-transform: uppercase;
+    font-weight: 500;
     &.primary {
+        cursor: pointer;
         color: $primary;
         background-color: rgba($primary, .1);
+        &:hover {
+            color: #fff;
+            background-color: $primary;
+        }
     }
     &.secondary {
+        cursor: pointer;
         color: $secondary;
         background-color: rgba($secondary, .1);
+        &:hover {
+            color: #fff;
+            background-color: $secondary;
+        }
     }
     &.round {
         width: 36px;
         height: 36px;
         padding: 0;
         border-radius: 50%;
-    }
-    &:hover {
-        color: #fff;
-        &.primary {
-            background-color: $primary;
-        }
-        &.secondary {
-            background-color: $secondary;
-        }
     }
 }
