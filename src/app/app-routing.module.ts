@@ -8,7 +8,8 @@ import { HomeComponent } from './containers/home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'book-info', component: BookInfoComponent },
-  { path: 'book-reading', component: BookReadingComponent }
+  { path: 'book-reading', component: BookReadingComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

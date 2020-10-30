@@ -1,0 +1,144 @@
+@import 'mixins';
+
+.wrapper {
+    padding-top: 80px;
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 20px;
+    }
+    .card {
+        padding: 60px;
+        border-radius: 24px;
+        background-color: #fff;
+        position: relative;
+        margin-bottom: 20px;
+        &.large {
+            overflow: hidden;
+            .subtitle {
+                color: $primary;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 28px;
+                margin-bottom: 5px;
+            }
+            .title {
+                font-weight: 900;
+                font-size: 48px;
+                line-height: 54px;
+                margin-bottom: 20px;
+                color: #000;
+            }
+            .controls {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                display: flex;
+                button {
+                    margin-right: 10px;
+                    &:last-child {
+                        margin-right: unset;
+                    }
+                }
+            }
+            .logo {
+                position: absolute;
+                top: -135px;
+                right: 90px;
+                font-family: sf-mono;
+                .main {
+                    font-size: 200px;
+                    color: rgba($darkBackground, .2)
+                }
+                .sub {
+                    position: absolute;
+                    bottom: 36px;
+                    right: -30px;
+                    color: rgba($primary, .2);
+                    font-size: 80px;
+                }
+            }
+        }
+        &.small {
+            display: flex;
+            flex-direction: column;
+            .title {
+                font-size: 14px;
+                color: $primary;
+                margin-bottom: 10px;
+            }
+            .text {
+                font-size: 18px;
+                line-height: 24px;
+            }
+            button {
+                margin-top: 40px;
+            }
+            &.dark {
+                background-color: $darkBackground;
+                .title {
+                    color: $secondary;
+                }
+                .text {
+                    color: #fff;
+                }
+            }
+            .video-preview {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                border-radius: 10px;
+                align-self: flex-end;
+                width: 50%;
+                overflow: hidden;
+                box-shadow: 0px 10px 28px 0px rgba($primary,0.6);
+                .play-wrap {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 72px;
+                    height: 72px;
+                    border-radius: 50%;
+                    background-color: rgba(255, 255, 255, .2);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1;
+                    .play {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 60px;
+                        height: 60px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        transition: .4s ease-in-out;
+                        span {
+                            transition: .4s ease-in-out;
+                        }
+                    }
+                    &:hover {
+                        .play {
+                            width: 100%;
+                            height: 100%;
+                            span {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    background-color: rgba($primary, .7);
+                }
+            }
+        }
+    }
+}

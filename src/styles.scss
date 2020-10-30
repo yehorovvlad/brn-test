@@ -12,3 +12,40 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 12px 20px;
+    position: relative;
+    border: none;
+    transition: .4s;
+    border-radius: 8px;
+    text-transform: uppercase;
+    &.primary {
+        color: $primary;
+        background-color: rgba($primary, .1);
+    }
+    &.secondary {
+        color: $secondary;
+        background-color: rgba($secondary, .1);
+    }
+    &.round {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 50%;
+    }
+    &:hover {
+        color: #fff;
+        &.primary {
+            background-color: $primary;
+        }
+        &.secondary {
+            background-color: $secondary;
+        }
+    }
+}
