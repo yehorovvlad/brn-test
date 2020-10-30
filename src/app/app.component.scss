@@ -1,3 +1,10 @@
-.body {
+.wrapper {
+    height: 100%;
     padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .content-center {
+        flex-grow: 1;
+    }
 }

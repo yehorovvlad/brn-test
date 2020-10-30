@@ -5,10 +5,10 @@ body {
 }
 
 .content-center {
-    width: 940px;
+    max-width: 980px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
-    box-sizing: content-box;
 }
