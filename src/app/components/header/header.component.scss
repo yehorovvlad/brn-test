@@ -1,0 +1,141 @@
+@import 'mixins';
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #181819;
+    color: #F5F5F5;
+    display: flex;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        .logo {
+            display: flex;
+            align-items: center;
+            .left-path {
+                margin-right: 10px;
+                position: relative;
+                font-weight: 900;
+                font-family: sf-mono;
+                .main {
+                    font-size: 48px;
+                    color: rgba(255, 255, 255, .8);
+                }
+                .sub {
+                    position: absolute;
+                    right: -7px;
+                    bottom: 5px;
+                    color: $primary;
+                    font-size: 24px;
+                }
+            }
+            .text-path {
+                line-height: 16px;
+                font-size: 14px;
+                font-family: sf-pro-rounded;
+            }
+        }
+        nav {
+            ul {
+                display: flex;
+                align-items: center;
+                padding-left: 0;
+                li {
+                    margin-right: 30px;
+                    &:hover {
+                        color: $primary;
+                        transition-duration: .4s;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .search-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-right: 20px;
+                .input-wrap {
+                    margin-right: 40px;
+                    width: 0;
+                    overflow: hidden;
+                    input {
+                        width: 100%;
+                        background: transparent;
+                        border: none;
+                        outline: none;
+                        border-bottom: 1px solid #fff;
+                        caret-color: #fff;
+                        color: #fff;
+                    }
+                }
+                .icon {
+                    cursor: pointer;
+                }
+            }
+            a {
+                display: flex;
+            }
+            .menu {
+                margin-left: 20px;
+                display: none;
+            }
+        }
+        &.search-is-open {
+            .logo {
+                margin-right: 40px;
+            }
+            .right {
+                flex-grow: 1;
+                .search-wrap {
+                    flex-grow: 1;
+                    .input-wrap {
+                        transition: .4s ease-in;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .menu-mobile {
+            position: absolute;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            top: 60px;
+            background-color: #181819;
+            padding: 10px;
+            a {
+                margin-bottom: 5px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@include media-md {
+    header {
+        .container {
+            nav {
+                display: none;
+            }
+            .right {
+                .menu {
+                    display: unset;
+                }
+            }
+        }
+    }
+}

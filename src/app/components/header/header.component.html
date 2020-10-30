@@ -1,1 +1,53 @@
-<p>header works!</p>
+<header>
+    <div class="content-center container" [class.search-is-open]="searchIsOpen">
+        <div class="logo">
+            <div class="left-path">
+                <div class="main">R</div>
+                <div class="sub">2</div>
+            </div>
+            <div class="text-path">
+                DIGITAL<br>LIBRARY
+            </div>
+        </div>
+        <nav *ngIf="!searchIsOpen">
+            <ul>
+                <li>
+                    <a href="#">Browse</a>
+                </li>
+                <li>
+                    <a href="#">A-Z Index</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">FAQs</a>
+                </li>
+                <li>
+                    <a href="#">User Guide</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="right">
+            <div class="search-wrap">
+                <div class="input-wrap">
+                    <input #searchInput type="text">
+                </div>
+                <span *ngIf="!searchIsOpen" class="material-icons icon" (click)="toggleSearch()">search</span>
+                <span *ngIf="searchIsOpen" class="material-icons icon" (click)="toggleSearch()">close</span>
+            </div>
+            <a href="#">
+                <span class="material-icons">account_circle</span>
+            </a>
+            <span *ngIf="!menuIsOpen" class="material-icons menu" (click)="toggleMenu()">menu</span>
+            <span *ngIf="menuIsOpen" class="material-icons menu" (click)="toggleMenu()">close</span>
+        </div>
+        <div *ngIf="menuIsOpen" class="menu-mobile">
+            <a href="#">Browse</a>
+            <a href="#">A-Z Index</a>
+            <a href="#">About</a>
+            <a href="#">FAQs</a>
+            <a href="#">User Guide</a>
+        </div>
+    </div>
+</header>
