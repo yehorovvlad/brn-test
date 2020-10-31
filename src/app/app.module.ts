@@ -10,6 +10,7 @@ import { BookInfoComponent } from './containers/book-info/book-info.component';
 import { BookReadingComponent } from './containers/book-reading/book-reading.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { BookReadingHeaderComponent } from './components/book-reading-header/book-reading-header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HomeComponent,
     BookInfoComponent,
     BookReadingComponent,
-    CarouselComponent
+    CarouselComponent,
+    BookReadingHeaderComponent
   ],
   imports: [
     BrowserModule,
