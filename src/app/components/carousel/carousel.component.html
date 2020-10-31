@@ -5,7 +5,7 @@
     <div class="carousel-wrap">
         <ngx-slick-carousel class="carousel" #slickModal [config]="slideConfig" (afterChange)="afterChange($event)" (init)="slickInit($event)">
             <div ngxSlickItem *ngFor="let slide of slides" class="item-wrap">
-                <div class="item">
+                <div class="item" [routerLink]="'/book-info'">
                     <img [src]="slide.imgUrl">
                     <div class="text">
                         {{ slide.text }}
