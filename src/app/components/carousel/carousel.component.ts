@@ -14,13 +14,29 @@ export class CarouselComponent implements OnInit {
   @Input() title: string;
 
   currentSlide: number = 0;
+  slidesToShow: number;
   slideConfig = {
     slidesToShow: 4,
     slidesToScroll: 1,
+    initialSlide: 0,
     dots: false,
     prevArrow: false,
     nextArrow: false,
-    infinite: false
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
   };
   slides: ISlide[];
 
@@ -57,15 +73,14 @@ export class CarouselComponent implements OnInit {
     ]
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
   
   slickInit(e) {
-    console.log(e.slick.currentSlide);
+    this.slidesToShow = e.slick.options.slidesToShow;
   }
 
   afterChange(e) {
     this.currentSlide = e.slick.currentSlide;
+    this.slidesToShow = e.slick.options.slidesToShow;
   }
 }

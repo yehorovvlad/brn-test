@@ -87,6 +87,9 @@
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: space-between;
+                button {
+                    margin-top: 20px;
+                }
             }
         }
         &.small {
@@ -221,6 +224,86 @@
             font-size: 36px;
             margin-right: 15px;
             color: #fff;
+        }
+    }
+}
+
+@include media-lg {
+    .wrapper {
+        padding-top: 60px;
+        .card {
+            padding: 50px;
+            &.large {
+                .subtitle {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                .title {
+                    width: 50%;
+                    font-size: 36px;
+                    line-height: 44px;
+                }
+            }
+        }
+    }
+}
+
+@include media-md {
+    .wrapper {
+        padding-top: 40px;
+        .cards {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        .card {
+            padding: 40px;
+            &.large {
+                flex-direction: column;
+                .left, .right {
+                    width: 100%;
+                }
+                .title {
+                    width: 100%;
+                }
+                .controls {
+                    align-self: flex-end;
+                    position: relative;
+                    right: 0;
+                    bottom: 0;
+                }
+                .absolute-img {
+                    display: none;
+                }
+            }
+            &.small {
+                .video-preview {
+                    position: relative;
+                    right: unset;
+                    bottom: unset;
+                }
+            }
+        }
+    }
+}
+
+@include media-md {
+    .wrapper {
+        padding-top: 30px;
+        .card {
+            padding: 30px;
+        }
+    }
+}
+
+@include media-sm {
+    .wrapper {
+        padding-top: 20px;
+        .card {
+            padding: 20px;
+            &.large {
+                .logo {
+                    right: 40px;
+                }
+            }
         }
     }
 }

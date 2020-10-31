@@ -3,7 +3,7 @@
         {{ title }}
     </div>
     <div class="carousel-wrap">
-        <ngx-slick-carousel class="carousel" #slickModal [config]="slideConfig" (afterChange)="afterChange($event)">
+        <ngx-slick-carousel class="carousel" #slickModal [config]="slideConfig" (afterChange)="afterChange($event)" (init)="slickInit($event)">
             <div ngxSlickItem *ngFor="let slide of slides" class="item-wrap">
                 <div class="item">
                     <img [src]="slide.imgUrl">
@@ -18,7 +18,7 @@
                 chevron_left
             </span>
         </button>
-        <button [class.primary]="currentSlide !== (slides.length - 4)" class="round next" (click)="slickModal.slickNext()">
+        <button [class.primary]="currentSlide !== (slides.length - slidesToShow)" class="round next" (click)="slickModal.slickNext()">
             <span class="material-icons-outlined">
                 chevron_right
             </span>
